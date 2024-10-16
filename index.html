@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Система обліку книг для бібліотекаря</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="books">Робота із книгами</a></li>
+                <li><a href="#" id="visitors">Робота з відвідувачами</a></li>
+                <li><a href="#" id="cards">Робота із картками</a></li>
+                <li><a href="#" id="stats">Статистика</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <div id="bookSection" class="section">
+            <h2>Список книг</h2>
+            <input type="text" id="searchBook" placeholder="Пошук книг">
+            <select id="sortBooks">
+                <option value="title">Сортувати за назвою</option>
+                <option value="author">Сортувати за автором</option>
+                <option value="count">Сортувати за кількістю</option>
+            </select>
+            <table id="bookTable">
+                <thead>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Автор</th>
+                        <th>Видавництво</th>
+                        <th>Кількість примірників</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        
+            <h3>Додати нову книгу</h3>
+            <form id="bookForm">
+                <label for="title">Назва:</label>
+                <input type="text" id="title" required>
+                <label for="author">Автор:</label>
+                <input type="text" id="author" required>
+                <label for="publisher">Видавництво:</label>
+                <input type="text" id="publisher" required>
+                <label for="count">Кількість примірників:</label>
+                <input type="number" id="count" min="1" required>
+                <button type="submit">Додати книгу</button>
+            </form>
+        </div>
+        
+
+        <div id="visitorSection" class="section">
+            <h2>Список відвідувачів</h2>
+            <input type="text" id="searchVisitor" placeholder="Пошук відвідувачів">
+            <select id="sortVisitors">
+                <option value="id">Сортувати за ID</option>
+                <option value="name">Сортувати за ім'ям</option>
+            </select>
+            <table id="visitorTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ім'я</th>
+                        <th>Номер телефону</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        
+            <h3>Додати нового відвідувача</h3>
+            <form id="visitorForm">
+                <label for="visitorName">Ім'я:</label>
+                <input type="text" id="visitorName" required>
+                <label for="visitorPhone">Номер телефону:</label>
+                <input type="text" id="visitorPhone" required>
+                <button type="submit">Додати відвідувача</button>
+            </form>
+        </div>
+
+        <div id="cardSection" class="section">
+            <h2>Картки книг</h2>
+            <h3>Видати книгу</h3>
+            <form id="cardForm">
+                <label for="visitorSelect">Відвідувач:</label>
+                <select id="visitorSelect">
+                 
+                </select>
+        
+                <label for="bookSelect">Книга:</label>
+                <select id="bookSelect">
+               
+                </select>
+        
+                <label for="issueDate">Дата видачі:</label>
+                <input type="date" id="issueDate" required>
+                <button type="submit">Видати книгу</button>
+            </form>
+            
+            <h3>Повернути книгу</h3>
+            <table id="cardTable">
+                <thead>
+                    <tr>
+                        <th>Книга</th>
+                        <th>Відвідувач</th>
+                        <th>Дата видачі</th>
+                        <th>Дата повернення</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+        </div>
+
+        <div id="statsSection" class="section">
+            <h2>Статистика</h2>
+            <h3>5 найпопулярніших книг</h3>
+            <ul id="topBooks">
+            
+            </ul>
+        
+            <h3>5 найактивніших відвідувачів</h3>
+            <ul id="topVisitors">
+            
+            </ul>
+        </div>
+    </main>
+
+    <script src="/index.js"></script>
+</body>
+
+</html>
